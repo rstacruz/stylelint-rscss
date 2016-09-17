@@ -28,13 +28,16 @@ Also OK:
 - `.component-name > a:hover`
 - `.component-name:hover > .element`
 
-## Rules.
+## Rules
 
 ### rscss/child-operator
 
-Value: `'always'`, `'never'`
+| Value | Description |
+| --- | --- |
+| `'always'`, `true` | Enable rule |
+| `'never'`, `false` | Disable rule |
 
-> Missing child operator. (_rscss/child-operator_)
+> Missing child operator (>). (_rscss/child-operator_)
 
 ```css
 .component-name .element { }    /* ✗ Avoid */
@@ -43,7 +46,10 @@ Value: `'always'`, `'never'`
 
 ### rscss/max-component-level
 
-Value: `null`, `n` (Number)
+| Value | Description |
+| --- | --- |
+| *Number* | Specify max level |
+| `false` | Disable rule |
 
 > Limit component depth to 3. (_rscss/max-component-level_)
 
@@ -54,7 +60,10 @@ Value: `null`, `n` (Number)
 
 ### rscss/require-element-in-variant
 
-Value: `'always'`, `'never'`
+| Value | Description |
+| --- | --- |
+| `'always'`, `true` | Enable rule |
+| `'never'`, `false` | Disable rule |
 
 > Variant doesn't affect an element. (_rscss/require-element-in-variant_)
 
@@ -65,7 +74,10 @@ Value: `'always'`, `'never'`
 
 ### rscss/component-name-format
 
-Value: `'always'`, `'never'`
+| Value | Description |
+| --- | --- |
+| `'always'`, `true`, `rscss` | Default RSCSS format (`dash-names`) |
+| `'never'`, `false` | Disable rule |
 
 > Invalid component name format. (_rscss/component-name-format_)
 

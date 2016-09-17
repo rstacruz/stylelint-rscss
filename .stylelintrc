@@ -3,6 +3,7 @@
     "./index"
   ],
   "rules": {
-    "rscss/child-operator": "always"
+    "rscss/child-operator": "always",
+    "rscss/component-name-format": true,
   }
 }
