@@ -3,5 +3,5 @@
 .foo-bar > .el {
 }
 
-a.bad-component .xyz {
+a.bad-component .xyz .abc {
 }

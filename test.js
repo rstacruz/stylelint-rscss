@@ -1,15 +1,32 @@
-const stylelint = require('stylelint')
+const test = require('tape')
 
-stylelint.lint({
-  files: [__dirname + '/fixtures/*'],
+test('child operators, sass', t => {
+  runLint(t, [fixture('sass.scss')], res => {
+    const warnings = res.results[0].warnings
+    t.equal(warnings[0].rule, 'rscss/missing-child-operator')
+    t.equal(warnings[0].text, "Missing child operator: '.component-name .badelement' (rscss/missing-child-operator)")
+  })
 })
-  .then(result => {
-    result.results.forEach(res => {
-      res.warnings.forEach(warn => {
-        console.log('warn:', require('util').inspect(warn, { depth: null, colors: true }))
-      })
-    })
+
+test('child operators', t => {
+  runLint(t, [fixture('example.css')], res => {
+    const warnings = res.results[0].warnings
+    t.equal(warnings[0].rule, 'rscss/missing-child-operator')
+    t.equal(warnings[0].text, "Missing child operator: 'a.bad-component .xyz .abc' (rscss/missing-child-operator)")
   })
-  .catch(err => {
-    throw err
-  })
+})
+
+/*
+ * Helpers
+ */
+
+function fixture (path) {
+  return require('path').join(__dirname, 'fixtures', path)
+}
+
+function runLint (t, files, fn) {
+  require('stylelint').lint({ files })
+    .then(result => fn(result))
+    .then(() => t.end())
+    .catch(err => t.end(err))
+}

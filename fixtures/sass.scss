@@ -5,5 +5,9 @@
 
   .badelement {
     color: blue;
+
+    .alsobad {
+      color: red;
+    }
   }
 }
