@@ -3,6 +3,6 @@
     "./index"
   ],
   "rules": {
-    "rscss/missing-child-operator": true
+    "rscss/child-operator": "always"
   }
 }

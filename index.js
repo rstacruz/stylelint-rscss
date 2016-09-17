@@ -1,5 +1,5 @@
 module.exports = {
   default: [
-    require('./lib/child-selector')
+    require('./lib/child_operator')
   ]
 }

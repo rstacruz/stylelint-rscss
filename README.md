@@ -30,12 +30,12 @@ Also OK:
 
 ## Invalid examples
 
-- Missing > operator (_missing-child-descendant_)
+- Missing > operator (_rscss/missing-child-descendant_)
 
   > eg: `.component-name .element`<br>
   > eg: `.component-name > .el > .element`
 
-- Component too deep (_component-too-deep_)
+- Component too deep (_rscss/component-too-deep_)
 
   > eg: `.component-name > table > tr > td > .element`<br>
 
