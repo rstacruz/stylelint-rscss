@@ -3,6 +3,7 @@
 .foo-bar {
 }
 
-.foo-bar > .el {
+.foo-bar > .one,
+.foo-bar > .two {
   color: blue;
 }

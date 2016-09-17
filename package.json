@@ -10,7 +10,8 @@
   "author": "Rico Sta. Cruz <rico@ricostacruz.com> (http://ricostacruz.com)",
   "license": "MIT",
   "dependencies": {
-    "postcss": "5.1.2"
+    "postcss": "5.1.2",
+    "postcss-selector-parser": "2.2.1"
   },
   "devDependencies": {
     "tape": "4.6.0"
