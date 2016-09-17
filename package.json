@@ -1,0 +1,18 @@
+{
+  "name": "rscss-lint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Rico Sta. Cruz <rico@ricostacruz.com> (http://ricostacruz.com)",
+  "license": "MIT",
+  "dependencies": {
+    "postcss": "5.1.2"
+  },
+  "devDependencies": {
+    "tape": "4.6.0"
+  }
+}
