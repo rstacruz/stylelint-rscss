@@ -10,9 +10,9 @@ module.exports = postcss.plugin('postcss-rscss-linter', function (options, secOp
 })
 
 function walkRule (node, state) {
-  state.messages.push({
-    position: node.source.start,
-    selector: node.selector
+  state.warn('hi there', {
+    node: node
   })
+
   return state
 }
