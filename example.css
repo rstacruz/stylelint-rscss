@@ -1,9 +1,8 @@
 @charset 'utf-8';
 
-.foo-bar {
+.foo-bar > .el {
 }
 
-.foo-bar > .one,
-.foo-bar > .two {
-  color: blue;
+/* tag(a) classname(foo-bar) combinator( ) tag(xyz) */
+a.bad-component .xyz  {
 }
