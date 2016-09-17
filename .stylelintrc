@@ -1,0 +1,8 @@
+{
+  "plugins": [
+    "./stylelint"
+  ],
+  "rules": {
+    "rscss/missing-child-operator": true
+  }
+}

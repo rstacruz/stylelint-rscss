@@ -4,14 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "tape test.js"
+    "test": "tape test.js",
+    "errors": "stylelint 'fixtures/*.css'"
   },
   "keywords": [],
   "author": "Rico Sta. Cruz <rico@ricostacruz.com> (http://ricostacruz.com)",
   "license": "MIT",
   "dependencies": {
+    "normalize-selector": "0.2.0",
     "postcss": "5.1.2",
-    "postcss-selector-parser": "2.2.1"
+    "postcss-resolve-nested-selector": "0.1.1",
+    "postcss-selector-parser": "2.2.1",
+    "style-search": "0.1.0",
+    "stylelint": "7.2.0",
+    "stylelint-scss": "1.3.4"
   },
   "devDependencies": {
     "tape": "4.6.0"
