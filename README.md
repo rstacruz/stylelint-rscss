@@ -28,25 +28,62 @@ Also OK:
 - `.component-name > a:hover`
 - `.component-name:hover > .element`
 
-## Invalid examples
+## Rules.
 
-- Missing > operator (_rscss/missing-child-descendant_)
+### rscss/child-operator
 
-  > eg: `.component-name .element`<br>
-  > eg: `.component-name > .el > .element`
+Value: `'always'`, `'never'`
 
-- Component too deep (_rscss/component-too-deep_)
+> Missing child operator. (_rscss/child-operator_)
 
-  > eg: `.component-name > table > tr > td > .element`<br>
+```css
+.component-name .element { }    /* ✗ Avoid */
+.component-name > .element { }  /* ✓ OK */
+```
 
-- Variant doesn't affect an element (_variant-without-element_)
+### rscss/max-component-level
 
-  > eg: `.component-name > .-xyz`
+Value: `null`, `n` (Number)
 
-- Wrong component name format (_invalid-component-format_)
+> Limit component depth to 3. (_rscss/max-component-level_)
 
-  > eg: `.component`
+```css
+.component-name > table > tr > td > .element { }   /* ✗ Avoid */
+.component-name > table > tr { }                   /* ✓ OK */
+```
 
-- Styling nested components not allowed (_nested-component-styling_)
+### rscss/require-element-in-variant
 
-  > eg: `.component > .element-name`
+Value: `'always'`, `'never'`
+
+> Variant doesn't affect an element. (_rscss/require-element-in-variant_)
+
+```css
+.component-name > .-small { }        /* ✗ Avoid */
+.component-name > .title.-small { }  /* ✓ OK */
+```
+
+### rscss/component-name-format
+
+Value: `'always'`, `'never'`
+
+> Invalid component name format. (_rscss/component-name-format_)
+
+```css
+.component { }       /* ✗ Avoid */
+.componentname { }   /* ✗ Avoid */
+.component-name { }  /* ✓ OK */
+```
+
+### rscss/element-name-format
+
+Value: `'always'`, `'never'`
+
+> Invalid element name format. (_rscss/element-name-format_)
+
+```css
+.component-name > .sub_title { }   /* ✗ Avoid */
+.component-name > .subTitle { }    /* ✗ Avoid */
+.component-name > .title { }       /* ✓ OK */
+```
+
