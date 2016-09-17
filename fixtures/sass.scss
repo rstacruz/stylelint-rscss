@@ -1,5 +1,9 @@
 .component-name {
-  .element {
+  > .goodelement {
+    color: blue;
+  }
+
+  .badelement {
     color: blue;
   }
 }

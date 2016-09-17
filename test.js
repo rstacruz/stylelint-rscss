@@ -1,7 +1,7 @@
 const stylelint = require('stylelint')
 
 stylelint.lint({
-  files: [__dirname + '/fixtures/example.css'],
+  files: [__dirname + '/fixtures/*'],
 })
   .then(result => {
     result.results.forEach(res => {

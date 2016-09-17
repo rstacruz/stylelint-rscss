@@ -1,5 +1,5 @@
 {
-  "name": "rscss-lint",
+  "name": "stylelint-rscss",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

@@ -3,6 +3,5 @@
 .foo-bar > .el {
 }
 
-/* tag(a) classname(foo-bar) combinator( ) tag(xyz) */
-a.bad-component .xyz  {
+a.bad-component .xyz {
 }
