@@ -4,8 +4,10 @@ test('child operators, sass', t => {
   runLint(t, [fixture('child-sass.scss')], res => {
     const warnings = res.results[0].warnings
     t.equal(warnings.length, 1)
-    t.equal(warnings[0].rule, 'rscss/child-operator')
-    t.equal(warnings[0].text, "Require child operator: '.component-name .badelement' (rscss/child-operator)")
+    t.equal(warnings[0].rule,
+      'rscss/no-descendant-operator')
+    t.equal(warnings[0].text,
+      "Descendant operator not allowed: '.component-name .badelement' (rscss/no-descendant-operator)")
   })
 })
 
@@ -13,8 +15,8 @@ test('child operators', t => {
   runLint(t, [fixture('child-example.css')], res => {
     const warnings = res.results[0].warnings
     t.equal(warnings.length, 1)
-    t.equal(warnings[0].rule, 'rscss/child-operator')
-    t.equal(warnings[0].text, "Require child operator: 'a.bad-component .xyz .abc' (rscss/child-operator)")
+    t.equal(warnings[0].text,
+      "Descendant operator not allowed: 'a.bad-component .xyz .abc' (rscss/no-descendant-operator)")
   })
 })
 
