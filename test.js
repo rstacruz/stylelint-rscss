@@ -21,9 +21,10 @@ test('child operators', t => {
 test('component name', t => {
   runLint(t, [fixture('component-names.css')], res => {
     const warnings = res.results[0].warnings
-    t.equal(warnings.length, 2)
+    t.equal(warnings.length, 3)
     t.equal(warnings[0].text, "Invalid component name format: \'.badcomponent\' (rscss/component-name-format)")
     t.equal(warnings[1].text, "Invalid component name format: \'.badcomponent.-xyz\' (rscss/component-name-format)")
+    t.equal(warnings[2].text, "Invalid component name format: \'.badcomponent.-abc\' (rscss/component-name-format)")
   })
 })
 

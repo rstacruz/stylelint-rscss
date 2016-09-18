@@ -2,3 +2,6 @@
 .good-component.-xyz { }
 .badcomponent { }
 .badcomponent.-xyz { }
+.badcomponent.-abc > .xyz { }
+p { }
+[aria-hidden="true"] { }
