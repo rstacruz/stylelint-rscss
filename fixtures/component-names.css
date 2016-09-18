@@ -1,11 +1,22 @@
 .good-component { }
 .good-component.-xyz { }
+
+/* Bad */
 .badcomponent { }
 .badcomponent.-xyz { }
 .badcomponent.-abc > .xyz { }
+
+/* Has no classnames, so should be ok */
 p { }
 [aria-hidden="true"] { }
+
+/* Only one allowed */
 .too-many.component-names { }
+
+/* Helpers are OK */
 ._helper { }
 ._helper._helper { }
+
+/* But not helpers with variants or whatnot */
 ._badhelper.-variant { }
+._badhelper.element { }
