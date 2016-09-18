@@ -5,3 +5,7 @@
 .badcomponent.-abc > .xyz { }
 p { }
 [aria-hidden="true"] { }
+.too-many.component-names { }
+._helper { }
+._helper._helper { }
+._badhelper.-variant { }

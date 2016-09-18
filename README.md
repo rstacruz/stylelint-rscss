@@ -58,25 +58,14 @@ Also OK:
 .component-name > table > tr { }                   /* ✓ OK */
 ```
 
-### rscss/require-element-in-variant
-
-| Value | Description |
-| --- | --- |
-| `'always'`, `true` | Enable rule |
-| `'never'`, `false` | Disable rule |
-
-> Variant doesn't affect an element. (_rscss/require-element-in-variant_)
-
-```css
-.component-name > .-small { }        /* ✗ Avoid */
-.component-name > .title.-small { }  /* ✓ OK */
-```
-
 ### rscss/component-name-format
 
+Validates top-level classes.
+
 | Value | Description |
 | --- | --- |
-| `'always'`, `true`, `rscss` | Default RSCSS format (`dash-names`) |
+| `'always'`, `true`, `kebab-case` | Default RSCSS format (*.dash-names*) |
+| `'pascal-case'` | React format (*PascalCase*) |
 | `'never'`, `false` | Disable rule |
 
 > Invalid component name format. (_rscss/component-name-format_)
@@ -85,6 +74,10 @@ Also OK:
 .component { }       /* ✗ Avoid */
 .componentname { }   /* ✗ Avoid */
 .component-name { }  /* ✓ OK */
+
+.componentname { }        /* ✗ Invalid component name format. */
+.search-box.foo-bar { }   /* ✗ Only 1 component name is allowed. */
+.search-box.element { }   /* ✗ Invalid class '.element', expected a variant. */
 ```
 
 ### rscss/element-name-format
@@ -97,5 +90,9 @@ Value: `'always'`, `'never'`
 .component-name > .sub_title { }   /* ✗ Avoid */
 .component-name > .subTitle { }    /* ✗ Avoid */
 .component-name > .title { }       /* ✓ OK */
-```
 
+.component-name > .sub-component { }  /* ✓ OK */
+
+.component-name > .subTitle { }    /* ✗ Invalid element name format. */
+.component-name > .left.pad { }    /* ✗ Invalid class '.pad', expected a variant. */
+```
