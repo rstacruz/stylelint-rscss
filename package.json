@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "tape test.js",
-    "errors": "stylelint 'fixtures/*'"
+    "errors": "stylelint 'fixtures/*'; true"
   },
   "keywords": [],
   "author": "Rico Sta. Cruz <rico@ricostacruz.com> (http://ricostacruz.com)",
