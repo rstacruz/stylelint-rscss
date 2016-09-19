@@ -6,6 +6,8 @@ stylelint-rscss is a plugin for [stylelint] to validate your code against [RSCSS
 
 ![](docs/images/cli.png)
 
+[![Status](https://travis-ci.org/rstacruz/stylelint-rscss.svg?branch=master)](https://travis-ci.org/rstacruz/stylelint-rscss "See test builds")
+
 <br>
 
 ## Quick start guide
