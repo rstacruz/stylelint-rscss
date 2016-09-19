@@ -25,19 +25,23 @@ test('child combinators', t => {
 test('component name', t => {
   runLint(t, [fixture('component_names.css')], res => {
     const warnings = res.results[0].warnings
-    t.equal(warnings.length, 6)
+    t.equal(warnings.length, 8)
     t.equal(warnings[0].text,
-      "Invalid component format: '.badcomponent' (rscss/class-format)")
+      "Invalid component name: '.badcomponent' (rscss/class-format)")
     t.equal(warnings[1].text,
-      "Invalid component format: '.badcomponent.-xyz' (rscss/class-format)")
+      "Invalid component name: '.badcomponent.-xyz' (rscss/class-format)")
     t.equal(warnings[2].text,
-      "Invalid component format: '.badcomponent.-abc' (rscss/class-format)")
+      "Invalid component name: '.badcomponent.-abc' (rscss/class-format)")
     t.equal(warnings[3].text,
       "Only one component name is allowed: '.too-many.component-names' (rscss/class-format)")
     t.equal(warnings[4].text,
-      "Invalid helper format: '._badhelper.-variant' (rscss/class-format)")
+      "Invalid helper name: '._badhelper.-variant' (rscss/class-format)")
     t.equal(warnings[5].text,
-      'Invalid helper format: \'._badhelper.element\' (rscss/class-format)')
+      'Invalid helper name: \'._badhelper.element\' (rscss/class-format)')
+    t.equal(warnings[6].text,
+      'Invalid element name: \'bad_element\' (rscss/class-format)')
+    t.equal(warnings[7].text,
+      'Invalid variant name: \'badvariant\' (rscss/class-format)')
   })
 })
 

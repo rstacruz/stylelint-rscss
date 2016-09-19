@@ -20,3 +20,11 @@ p { }
 /* But not helpers with variants or whatnot */
 ._badhelper.-variant { }
 ._badhelper.element { }
+
+/* Elements: OK */
+.my-component > .element { }
+.my-component > .element > .element2 { }
+
+/* Elements: bad */
+.my-component > .bad_element { }
+.my-component > .element.badvariant { }
