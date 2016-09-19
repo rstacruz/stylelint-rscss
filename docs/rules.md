@@ -7,7 +7,7 @@ Ensures that you use `>` (child combinator) and not ` ` (descendant combinator).
 | Value | Description |
 | --- | --- |
 | `'always'`, `true` | Enable rule |
-| `'never'`, `false` | Disable rule |
+| `false` | Disable rule |
 
 ```scss
 .component-name > .element { }  // ✓ OK
@@ -28,15 +28,23 @@ Disallows components that are too deep.
 .compo-nent > table > tr > td > .element { }  // ✗ Limit component depth to 3.
 ```
 
-## rscss/component-name-format
+## rscss/class-format
 
-Validates top-level classes and ensures they are either components or helpers.
+Validates class names of components, helpers, and elements.
 
 | Value | Description |
 | --- | --- |
-| `'always'`, `true`, `kebab-case` | Default RSCSS format (*.dash-names*) |
-| `'pascal-case'` | React format (*PascalCase*) |
-| `'never'`, `false` | Disable rule |
+| `true` | Default RSCSS format (*.dash-names*) |
+| `false` | Disable rule |
+
+Secondary options:
+
+| Key | Description |
+| --- | --- |
+| `component` | ... |
+| `element` | ... |
+| `helper` | ... |
+| `variant` | ... |
 
 ```scss
 .component { }       // ✗ Avoid
@@ -46,24 +54,4 @@ Validates top-level classes and ensures they are either components or helpers.
 .componentname { }        // ✗ Invalid component name format.
 .search-box.foo-bar { }   // ✗ Only 1 component name is allowed.
 .search-box.element { }   // ✗ Invalid class '.element', expected a variant.
-```
-
-## rscss/element-name-format
-
-Validates element names.
-
-| Value | Description |
-| --- | --- |
-| `'always'`, `true`, `single-word` | Default RSCSS format (*.singleword*) |
-| `'never'`, `false` | Disable rule |
-
-```scss
-.component-name > .sub_title { }   // ✗ Invalid element name format.
-.component-name > .subTitle { }    // ✗ Invalid element name format.
-.component-name > .title { }       // ✓ OK
-
-.component-name > .sub-component { }  // ✓ OK
-
-.component-name > .subTitle { }    // ✗ Invalid element name format.
-.component-name > .left.pad { }    // ✗ Invalid class '.pad', expected a variant.
 ```

@@ -27,17 +27,17 @@ test('component name', t => {
     const warnings = res.results[0].warnings
     t.equal(warnings.length, 6)
     t.equal(warnings[0].text,
-      "Invalid component format: '.badcomponent' (rscss/component-name-format)")
+      "Invalid component format: '.badcomponent' (rscss/class-format)")
     t.equal(warnings[1].text,
-      "Invalid component format: '.badcomponent.-xyz' (rscss/component-name-format)")
+      "Invalid component format: '.badcomponent.-xyz' (rscss/class-format)")
     t.equal(warnings[2].text,
-      "Invalid component format: '.badcomponent.-abc' (rscss/component-name-format)")
+      "Invalid component format: '.badcomponent.-abc' (rscss/class-format)")
     t.equal(warnings[3].text,
-      "Only one component name is allowed: '.too-many.component-names' (rscss/component-name-format)")
+      "Only one component name is allowed: '.too-many.component-names' (rscss/class-format)")
     t.equal(warnings[4].text,
-      "Invalid helper format: '._badhelper.-variant' (rscss/component-name-format)")
+      "Invalid helper format: '._badhelper.-variant' (rscss/class-format)")
     t.equal(warnings[5].text,
-      'Invalid helper format: \'._badhelper.element\' (rscss/component-name-format)')
+      'Invalid helper format: \'._badhelper.element\' (rscss/class-format)')
   })
 })
 
@@ -59,8 +59,9 @@ function runLint (t, files, fn) {
 /*
  * TODO:
  *
- * - [ ] rscss/component-name-format: 'kebab-case'
- * - [ ] rscss/component-name-format: 'pascal-case'
+ * - [ ] rscss/class-format: components
+ * - [x] rscss/class-format: helpers
+ * - [ ] rscss/class-format: elements
  * - [ ] rscss/element-name-format: true
  * - [ ] rscss/max-component-level: 3
  */

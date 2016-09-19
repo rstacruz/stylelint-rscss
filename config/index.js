@@ -4,6 +4,6 @@ module.exports = {
   ],
   rules: {
     'rscss/no-descendant-combinator': 'always',
-    'rscss/component-name-format': true
+    'rscss/class-format': true
   }
 }
