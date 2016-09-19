@@ -2,7 +2,9 @@
 
 > Validate CSS (and SCSS, Less, SugarSS) to RSCSS conventions
 
-stylelint-rscss is a plugin for [stylelint] to validate your code against [RSCSS] conventions. It supports SCSS (Sass), SugarSS and Less, as supported by Stylelint.
+stylelint-rscss is a plugin for [stylelint] to validate your code against [RSCSS] conventions. It supports SCSS (Sass), SugarSS and Less, as supported by stylelint.
+
+As a stylelint plugin, it can be used with stylelint's [hundreds of rules](http://stylelint.io/user-guide/rules/) or other [stylelint configs](https://github.com/stylelint/stylelint-config-standard) to validate other good CSS practices as well.
 
 ![](docs/images/cli.png)
 
