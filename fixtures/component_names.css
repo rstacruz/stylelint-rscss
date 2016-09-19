@@ -28,3 +28,6 @@ p { }
 /* Elements: bad */
 .my-component > .bad_element { }
 .my-component > .element.badvariant { }
+.my-component > .ok,
+.my-component > .bad_nesting { }
+.my-component > .-variant { }

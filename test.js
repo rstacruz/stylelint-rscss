@@ -25,7 +25,7 @@ test('child combinators', t => {
 test('component name', t => {
   runLint(t, [fixture('component_names.css')], res => {
     const warnings = res.results[0].warnings
-    t.equal(warnings.length, 8)
+    t.equal(warnings.length, 10)
     t.equal(warnings[0].text,
       "Invalid component name: '.badcomponent' (rscss/class-format)")
     t.equal(warnings[1].text,
@@ -39,9 +39,13 @@ test('component name', t => {
     t.equal(warnings[5].text,
       'Invalid helper name: \'._badhelper.element\' (rscss/class-format)')
     t.equal(warnings[6].text,
-      'Invalid element name: \'bad_element\' (rscss/class-format)')
+      'Invalid element name: \'.bad_element\' (rscss/class-format)')
     t.equal(warnings[7].text,
-      'Invalid variant name: \'badvariant\' (rscss/class-format)')
+      'Invalid variant name: \'.badvariant\' (rscss/class-format)')
+    t.equal(warnings[8].text,
+      'Invalid element name: \'.bad_nesting\' (rscss/class-format)')
+    t.equal(warnings[9].text,
+      'Variant has no element: \'.-variant\' (rscss/class-format)')
   })
 })
 
