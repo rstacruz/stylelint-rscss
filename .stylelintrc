@@ -1,9 +1,5 @@
 {
-  "plugins": [
-    "./index"
-  ],
-  "rules": {
-    "rscss/no-descendant-operator": "always",
-    "rscss/component-name-format": true,
-  }
+  "extends": [
+    "./config.js"
+  ]
 }
