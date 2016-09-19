@@ -21,7 +21,7 @@ npm install --save-dev stylelint stylelint-rscss
 **Configure:** Create a `.stylelintrc` in your project. Use the `stylelint-rscss/config` configuration, which has defaults for strict RSCSS conventions.
 
 ```js
-/* .stylelintrc */
+// .stylelintrc
 {
   "extends": [
     "stylelint-rscss/config"
@@ -32,7 +32,7 @@ npm install --save-dev stylelint stylelint-rscss
 **Add a script:** Add an npm script to your `package.json`.
 
 ```js
-/* package.json */
+// package.json
 {
   "scripts": {
     "lint:css": "stylelint path/to/css/**/*"

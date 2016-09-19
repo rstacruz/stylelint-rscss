@@ -1,5 +1,25 @@
 # Rules
 
+Here's an example `.stylelintrc` that overrides some stylelint-rscss configuration.
+
+```js
+// .stylelintrc
+{
+  "plugins": [
+    "stylelint-rscss"
+  ],
+  "rules": {
+    "rscss/no-descendant-selector": true,
+    "rscss/class-format": [
+      true,
+      {
+        "component": "pascal-case"
+      }
+    ]
+  }
+}
+```
+
 ## rscss/no-descendant-combinator
 
 Ensures that you use `>` (child combinator) and not ` ` (descendant combinator).
