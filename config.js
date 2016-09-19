@@ -3,7 +3,7 @@ module.exports = {
     require.resolve('./index')
   ],
   rules: {
-    'rscss/no-descendant-operator': 'always',
+    'rscss/no-descendant-combinator': 'always',
     'rscss/component-name-format': true
   }
 }

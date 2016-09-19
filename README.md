@@ -74,9 +74,9 @@ Also OK:
 
 ## Rules
 
-### rscss/child-operator
+### rscss/no-descendant-combinator
 
-Ensures that you use `>` (child descendant selector).
+Ensures that you use `>` (child combinator) and not ` ` (descendant combinator).
 
 | Value | Description |
 | --- | --- |
@@ -85,7 +85,7 @@ Ensures that you use `>` (child descendant selector).
 
 ```css
 .component-name > .element { }  /* ✓ OK */
-.component-name .element { }    /* ✗ Missing child operator. */
+.component-name .element { }    /* ✗ Missing child combinator. */
 ```
 
 ### rscss/max-component-level

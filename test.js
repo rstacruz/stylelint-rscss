@@ -1,22 +1,22 @@
 const test = require('tape')
 
-test('child operators, sass', t => {
+test('child combinators, sass', t => {
   runLint(t, [fixture('child-sass.scss')], res => {
     const warnings = res.results[0].warnings
     t.equal(warnings.length, 1)
     t.equal(warnings[0].rule,
-      'rscss/no-descendant-operator')
+      'rscss/no-descendant-combinator')
     t.equal(warnings[0].text,
-      "Descendant operator not allowed: '.component-name .badelement' (rscss/no-descendant-operator)")
+      "Descendant combinator not allowed: '.component-name .badelement' (rscss/no-descendant-combinator)")
   })
 })
 
-test('child operators', t => {
+test('child combinators', t => {
   runLint(t, [fixture('child-example.css')], res => {
     const warnings = res.results[0].warnings
     t.equal(warnings.length, 1)
     t.equal(warnings[0].text,
-      "Descendant operator not allowed: 'a.bad-component .xyz .abc' (rscss/no-descendant-operator)")
+      "Descendant combinator not allowed: 'a.bad-component .xyz .abc' (rscss/no-descendant-combinator)")
   })
 })
 
