@@ -8,19 +8,13 @@ stylelint-rscss is a plugin for [stylelint] to validate your code against [RSCSS
 
 ## Quick start guide
 
-Install [stylelint] and stylelint-rscss to your project.
+**Install:** Install [stylelint] and stylelint-rscss to your project.
 
 ```sh
 npm install --save-dev stylelint stylelint-rscss
 ```
 
-Install stylelint globally.
-
-```sh
-npm install -g stylelint
-```
-
-Create a `.stylelintrc` in your project. Use the `stylelint-rscss/config` configuration, which has defaults for strict RSCSS conventions.
+**Configure:** Create a `.stylelintrc` in your project. Use the `stylelint-rscss/config` configuration, which has defaults for strict RSCSS conventions.
 
 ```js
 /* .stylelintrc */
@@ -31,7 +25,7 @@ Create a `.stylelintrc` in your project. Use the `stylelint-rscss/config` config
 }
 ```
 
-Add an npm script to your `package.json`.
+**Add a script:** Add an npm script to your `package.json`.
 
 ```js
 /* package.json */
@@ -42,7 +36,7 @@ Add an npm script to your `package.json`.
 }
 ```
 
-Run it.
+Run it!
 
 ```sh
 npm run lint:css
@@ -50,15 +44,30 @@ npm run lint:css
 
 <br>
 
-## Further recommendations
+## Recommendations
+
+These steps are not required, but are *highly* recommended:
 
 - Add [stylelint-config-standard](https://www.npmjs.com/package/stylelint-config-standard) as well!
-- Add stylelint support for your editor. Recommendations:
-  - Neovim: [neomake](https://github.com/neomake/neomake) (no setup needed)
-  - Vim: [syntastic](https://github.com/scrooloose/syntastic) (use the `stylelint` checker)
-  - Atom: [atom-linter](https://github.com/AtomLinter/atom-linter) + [linter-stylelint](https://atom.io/packages/linter-stylelint)
+- Configure your text editor to use stylelint. (See [text editor support](#text-editor-support))
 - Add `npm run lint:css` to your CI script.
 - You can use styelint-rscss as a plugin and enable only the rules you need or customize their configuration. See [config.js](config.js).
+
+<br>
+
+## Text editor support
+
+You need to install stylelint globally (`npm install -g stylelint`) for text editor support.
+
+```sh
+npm install -g stylelint
+```
+
+After that, here are the plugins I'd recommend:
+
+- Neovim: [neomake](https://github.com/neomake/neomake) (no setup needed)
+- Vim: [syntastic](https://github.com/scrooloose/syntastic) (use the `stylelint` checker)
+- Atom: [atom-linter](https://github.com/AtomLinter/atom-linter) + [linter-stylelint](https://atom.io/packages/linter-stylelint)
 
 <br>
 
@@ -66,23 +75,47 @@ npm run lint:css
 
 Here are some valid examples according to [RSCSS] rules:
 
-- `.component-name` (Componnets should be two or more words, separated by dashes.)
-- `.component-name > .element` (Elements should be one word. Use `>` to denote markup structure.)
-- `.component-name > .element.-foo` (Variant classes begin with a `-`.)
-- `._helper` (Helpers start with a `_`.)
+- `.component-name` - Components should be two or more words, separated by dashes.
+- `.component-name > .element` - Elements should be one word. Use `>` to denote markup structure.
+- `.component-name > .element.-foo` - Variant classes begin with a `-`.
+- `._helper` - Helpers start with a `_`.
 
-Some edge cases not allowed:
+```scss
+.component-name { }
+  // ✓ Components should be two or more words, separated by dashes.
+.component-name > .element { }
+  // ✓ Elements should be one word. Use `>` to denote markup structure.
+.component-name > .element.-foo { }
+  // ✓ Variant classes begin with a dash (`-`).
+._helper { }
+  // ✓ Helpers start with an underscore (`_`).
+```
 
-- `.component-name.other-component` - Only one component name is allowed.
-- `.-foo` - Variants should be attached to components or elements.
+Some cases not allowed:
+
+```scss
+.component-name .element { }
+  // ✗ Use `>` to denote markup structure.
+.componentname { }
+  // ✗ Components should be two or more words.
+.component-name.other-component { }
+  // ✗ Only one component name is allowed.
+.-foo { }
+  // ✗ Variants should be attached to components or elements.
+```
 
 Also OK:
 
-- `h2` - Bare elements can be styled.
-- `.component-name .element` - Use `>` to denote markup structure.
-- `.component-name > h2`
-- `.component-name > a:hover`
-- `.component-name:hover > .element`
+```scss
+h2 { }
+  // ✓ Bare elements can be styled.
+.component-name > h2 { }
+  // ✓ Bare elements can be styled as elements.
+.component-name > a:hover[aria-hidden="false"] { }
+  // ✓ Pseudo-classes and attributes are OK.
+.component-name:hover > .element { }
+  // ✓ They're ok for components too.
+```
 
 <br>
 
