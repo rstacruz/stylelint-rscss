@@ -75,6 +75,8 @@ After that, here are the plugins I'd recommend:
 - Vim: [syntastic](https://github.com/scrooloose/syntastic) (use the `stylelint` checker)
 - Atom: [atom-linter](https://github.com/AtomLinter/atom-linter) + [linter-stylelint](https://atom.io/packages/linter-stylelint)
 
+Also see stylelint's [complimentary tools](http://stylelint.io/user-guide/complementary-tools/) documentation.
+
 <br>
 
 ## Examples
