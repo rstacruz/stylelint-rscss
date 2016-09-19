@@ -53,3 +53,12 @@ function runLint (t, files, fn) {
     .then(() => t.end())
     .catch(err => t.end(err))
 }
+
+/*
+ * TODO:
+ *
+ * - [ ] rscss/component-name-format: 'kebab-case'
+ * - [ ] rscss/component-name-format: 'pascal-case'
+ * - [ ] rscss/element-name-format: true
+ * - [ ] rscss/max-component-level: 3
+ */
