@@ -8,10 +8,16 @@ stylelint-rscss is a plugin for [stylelint] to validate your code against [RSCSS
 
 ## Quick start guide
 
-Install [stylelint] and stylelint-rscss.
+Install [stylelint] and stylelint-rscss to your project.
 
 ```sh
 npm install --save-dev stylelint stylelint-rscss
+```
+
+Install stylelint globally.
+
+```sh
+npm install -g stylelint
 ```
 
 Create a `.stylelintrc` in your project. Use the `stylelint-rscss/config` configuration, which 
@@ -42,11 +48,17 @@ Run it.
 npm run lint:css
 ```
 
+<br>
+
 ## Further recommendations
 
 - Add [stylelint-config-standard](https://www.npmjs.com/package/stylelint-config-standard) as well!
+- Add stylelint support for your editor. Recommendations:
+  - Neovim: [neomake](https://github.com/neomake/neomake) (no setup needed)
+  - Vim: [syntastic](https://github.com/scrooloose/syntastic) (use the `stylelint` checker)
+  - Atom: [atom-linter](https://github.com/AtomLinter/atom-linter) + [linter-stylelint](https://atom.io/packages/linter-stylelint)
 - Add `npm run lint:css` to your CI script.
-- You can use styelint-rscss as a plugin and enable only the rules you need or customize their configuration. (see [config.js](config.js)).
+- You can use styelint-rscss as a plugin and enable only the rules you need or customize their configuration. See [config.js](config.js).
 
 <br>
 
