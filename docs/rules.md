@@ -68,3 +68,11 @@ Each of these options can be set to any of these values:
 .search-box.foo-bar { }   // ✗ Only 1 component name is allowed.
 .search-box.element { }   // ✗ Invalid class '.element', expected a variant.
 ```
+
+The `maxDepth` setting works like so:
+
+```scss
+.component-name { }             // 0
+.component-name > .a { }        // 1
+.component-name > .a > .b { }   // 2
+```
