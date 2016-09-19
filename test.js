@@ -1,7 +1,7 @@
 const test = require('tape')
 
 test('child combinators, sass', t => {
-  runLint(t, [fixture('child-sass.scss')], res => {
+  runLint(t, [fixture('child.scss')], res => {
     const warnings = res.results[0].warnings
     t.equal(warnings.length, 1)
     t.equal(warnings[0].rule,
@@ -12,7 +12,7 @@ test('child combinators, sass', t => {
 })
 
 test('child combinators', t => {
-  runLint(t, [fixture('child-example.css')], res => {
+  runLint(t, [fixture('child.css')], res => {
     const warnings = res.results[0].warnings
     t.equal(warnings.length, 1)
     t.equal(warnings[0].text,
@@ -21,7 +21,7 @@ test('child combinators', t => {
 })
 
 test('component name', t => {
-  runLint(t, [fixture('component-names.css')], res => {
+  runLint(t, [fixture('component_names.css')], res => {
     const warnings = res.results[0].warnings
     t.equal(warnings.length, 6)
     t.equal(warnings[0].text,
