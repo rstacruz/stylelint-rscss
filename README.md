@@ -79,12 +79,7 @@ After that, here are the plugins I'd recommend:
 
 ## Examples
 
-Here are some valid examples according to [RSCSS] rules:
-
-- `.component-name` - Components should be two or more words, separated by dashes.
-- `.component-name > .element` - Elements should be one word. Use `>` to denote markup structure.
-- `.component-name > .element.-foo` - Variant classes begin with a `-`.
-- `._helper` - Helpers start with a `_`.
+Here are some valid examples according to [RSCSS] rules.
 
 ```scss
 .component-name { }
@@ -122,6 +117,8 @@ h2 { }
 .component-name:hover > .element { }
   // ✓ They're ok for components too.
 ```
+
+See [Rules](docs/rules.md) for more examples.
 
 <br>
 
