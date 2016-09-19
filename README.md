@@ -20,7 +20,7 @@ Install stylelint globally.
 npm install -g stylelint
 ```
 
-Create a `.stylelintrc` in your project. Use the `stylelint-rscss/config` configuration, which 
+Create a `.stylelintrc` in your project. Use the `stylelint-rscss/config` configuration, which has defaults for strict RSCSS conventions.
 
 ```js
 /* .stylelintrc */
