@@ -134,9 +134,9 @@ Ensures that you use `>` (child combinator) and not ` ` (descendant combinator).
 | `'always'`, `true` | Enable rule |
 | `'never'`, `false` | Disable rule |
 
-```css
-.component-name > .element { }  /* ✓ OK */
-.component-name .element { }    /* ✗ Missing child combinator. */
+```scss
+.component-name > .element { }  // ✓ OK
+.component-name .element { }    // ✗ Missing child combinator.
 ```
 
 ### rscss/max-component-level
@@ -146,9 +146,9 @@ Ensures that you use `>` (child combinator) and not ` ` (descendant combinator).
 | *Number* | Specify max level |
 | `false` | Disable rule |
 
-```css
-.compo-nent > table > tr { }  /* ✓ OK */
-.compo-nent > table > tr > td > .element { }  /* ✗ Limit component depth to 3. */
+```scss
+.compo-nent > table > tr { }  // ✓ OK
+.compo-nent > table > tr > td > .element { }  // ✗ Limit component depth to 3.
 ```
 
 ### rscss/component-name-format
@@ -161,14 +161,14 @@ Validates top-level classes and ensures they are either components or helpers.
 | `'pascal-case'` | React format (*PascalCase*) |
 | `'never'`, `false` | Disable rule |
 
-```css
-.component { }       /* ✗ Avoid */
-.componentname { }   /* ✗ Avoid */
-.component-name { }  /* ✓ OK */
+```scss
+.component { }       // ✗ Avoid
+.componentname { }   // ✗ Avoid
+.component-name { }  // ✓ OK
 
-.componentname { }        /* ✗ Invalid component name format. */
-.search-box.foo-bar { }   /* ✗ Only 1 component name is allowed. */
-.search-box.element { }   /* ✗ Invalid class '.element', expected a variant. */
+.componentname { }        // ✗ Invalid component name format.
+.search-box.foo-bar { }   // ✗ Only 1 component name is allowed.
+.search-box.element { }   // ✗ Invalid class '.element', expected a variant.
 ```
 
 ### rscss/element-name-format
@@ -180,15 +180,15 @@ Validates element names.
 | `'always'`, `true`, `single-word` | Default RSCSS format (*.singleword*) |
 | `'never'`, `false` | Disable rule |
 
-```css
-.component-name > .sub_title { }   /* ✗ Invalid element name format. */
-.component-name > .subTitle { }    /* ✗ Invalid element name format. */
-.component-name > .title { }       /* ✓ OK */
+```scss
+.component-name > .sub_title { }   // ✗ Invalid element name format.
+.component-name > .subTitle { }    // ✗ Invalid element name format.
+.component-name > .title { }       // ✓ OK
 
-.component-name > .sub-component { }  /* ✓ OK */
+.component-name > .sub-component { }  // ✓ OK
 
-.component-name > .subTitle { }    /* ✗ Invalid element name format. */
-.component-name > .left.pad { }    /* ✗ Invalid class '.pad', expected a variant. */
+.component-name > .subTitle { }    // ✗ Invalid element name format.
+.component-name > .left.pad { }    // ✗ Invalid class '.pad', expected a variant.
 ```
 
 [stylelint]: http://stylelint.io/
