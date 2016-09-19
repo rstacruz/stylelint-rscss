@@ -2,7 +2,7 @@
 
 > Validate CSS (and Sass, Less, SugarSS) to RSCSS conventions
 
-stylelint-rscss is a plugin for [stylelint]
+stylelint-rscss is a plugin for [stylelint] to validate your code against [RSCSS] conventions.
 
 ## Quick start guide
 
@@ -12,7 +12,7 @@ Install [stylelint] and stylelint-rscss.
 npm install --save-dev stylelint stylelint-rscss
 ```
 
-Create a `.stylelintrc` in your project.
+Create a `.stylelintrc` in your project. Use the `stylelint-rscss/config` configuration, which 
 
 ```js
 /* .stylelintrc */
@@ -44,6 +44,7 @@ npm run lint:css
 
 - Add [stylelint-config-standard](https://www.npmjs.com/package/stylelint-config-standard) as well!
 - Add `npm run lint:css` to your CI script.
+- You can use styelint-rscss as a plugin and enable only the rules you need or customize their configuration. (see [config.js](config.js)).
 
 ## Rules
 
@@ -55,7 +56,6 @@ Ensures that you use `>` (child descendant selector).
 | --- | --- |
 | `'always'`, `true` | Enable rule |
 | `'never'`, `false` | Disable rule |
-
 
 ```css
 .component-name > .element { }  /* ✓ OK */
@@ -129,3 +129,16 @@ Also OK:
 - `.component-name:hover > .element`
 
 [stylelint]: http://stylelint.io/
+[RSCSS]: http://rscss.io/
+
+## Thanks
+
+**stylelint-rscss** © 2016+, Rico Sta. Cruz. Released under the [MIT] License.<br>
+Authored and maintained by Rico Sta. Cruz with help from contributors ([list][contributors]).
+
+> [ricostacruz.com](http://ricostacruz.com) &nbsp;&middot;&nbsp;
+> GitHub [@rstacruz](https://github.com/rstacruz) &nbsp;&middot;&nbsp;
+> Twitter [@rstacruz](https://twitter.com/rstacruz)
+
+[MIT]: http://mit-license.org/
+[contributors]: http://github.com/rstacruz/stylelint-rscss/contributors
