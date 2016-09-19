@@ -143,6 +143,8 @@ Ensures that you use `>` (child combinator) and not ` ` (descendant combinator).
 
 ### rscss/max-component-level
 
+Disallows components that are too deep.
+
 | Value | Description |
 | --- | --- |
 | *Number* | Specify max level |
@@ -195,6 +197,8 @@ Validates element names.
 
 [stylelint]: http://stylelint.io/
 [RSCSS]: http://rscss.io/
+
+<br>
 
 ## Thanks
 
