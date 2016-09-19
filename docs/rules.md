@@ -14,20 +14,6 @@ Ensures that you use `>` (child combinator) and not ` ` (descendant combinator).
 .component-name .element { }    // ✗ Missing child combinator.
 ```
 
-## rscss/max-component-level
-
-Disallows components that are too deep.
-
-| Value | Description |
-| --- | --- |
-| *Number* | Specify max level |
-| `false` | Disable rule |
-
-```scss
-.compo-nent > table > tr { }  // ✓ OK
-.compo-nent > table > tr > td > .element { }  // ✗ Limit component depth to 3.
-```
-
 ## rscss/class-format
 
 Validates class names of components, helpers, and elements.
@@ -43,6 +29,7 @@ Secondary options:
 - `element` - Format for element names *(default: `element`)*
 - `helper` - Format for helper names *(default: `helper`)*
 - `variant` - Format for variant names *(default: `variant`)*
+- `maxDepth` - Maximum component depth *(default: `4`)*
 
 Each of these options can be set to any of these values:
 

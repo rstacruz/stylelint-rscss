@@ -31,3 +31,9 @@ p { }
 .my-component > .ok,
 .my-component > .bad_nesting { }
 .my-component > .-variant { }
+
+/* Too deep */
+.my-component > .ok { }
+.my-component > .ok > .ok { }
+.my-component > .ok > .ok > .ok { }
+.my-component > .ok > .ok > .ok > .bad { }
