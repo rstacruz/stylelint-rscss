@@ -4,6 +4,8 @@
 
 stylelint-rscss is a plugin for [stylelint] to validate your code against [RSCSS] conventions. It supports SCSS (Sass), SugarSS and Less, as supported by Stylelint.
 
+![](docs/images/cli.png)
+
 <br>
 
 ## Quick start guide
@@ -56,6 +58,8 @@ These steps are not required, but are *highly* recommended:
 <br>
 
 ## Text editor support
+
+![](docs/images/vim.png)
 
 You need to install stylelint globally (`npm install -g stylelint`) for text editor support.
 

@@ -1,7 +1,11 @@
 @charset 'utf-8';
 
 .foo-bar > .el {
+  display: flex;
+  flex: auto;
 }
 
-a.bad-component .xyz .abc {
+a.bad-component .xyz {
+  color: blue;
+  display: block;
 }

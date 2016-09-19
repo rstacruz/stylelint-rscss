@@ -16,7 +16,7 @@ test('child combinators', t => {
     const warnings = res.results[0].warnings
     t.equal(warnings.length, 1)
     t.equal(warnings[0].text,
-      "Descendant combinator not allowed: 'a.bad-component .xyz .abc' (rscss/no-descendant-combinator)")
+      "Descendant combinator not allowed: 'a.bad-component .xyz' (rscss/no-descendant-combinator)")
   })
 })
 
