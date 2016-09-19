@@ -1,6 +1,6 @@
 # stylelint-rscss
 
-> Validate CSS (and Sass, Less, SugarSS) to RSCSS conventions
+> Validate CSS (and Sass, Less, SugarSS) to RSCSS conventions - WIP :warning:
 
 stylelint-rscss is a plugin for [stylelint] to validate your code against [RSCSS] conventions.
 
@@ -45,6 +45,32 @@ npm run lint:css
 - Add [stylelint-config-standard](https://www.npmjs.com/package/stylelint-config-standard) as well!
 - Add `npm run lint:css` to your CI script.
 - You can use styelint-rscss as a plugin and enable only the rules you need or customize their configuration. (see [config.js](config.js)).
+
+<br>
+
+## Examples
+
+Here are some valid examples according to [RSCSS] rules:
+
+- `.component-name` (Componnets should be two or more words, separated by dashes.)
+- `.component-name > .element` (Elements should be one word. Use `>` to denote markup structure.)
+- `.component-name > .element.-foo` (Variant classes begin with a `-`.)
+- `._helper` (Helpers start with a `_`.)
+
+Some edge cases not allowed:
+
+- `.component-name.other-component` - Only one component name is allowed.
+- `.-foo` - Variants should be attached to components or elements.
+
+Also OK:
+
+- `h2` - Bare elements can be styled.
+- `.component-name .element` - Use `>` to denote markup structure.
+- `.component-name > h2`
+- `.component-name > a:hover`
+- `.component-name:hover > .element`
+
+<br>
 
 ## Rules
 
@@ -113,20 +139,6 @@ Validates element names.
 .component-name > .subTitle { }    /* ✗ Invalid element name format. */
 .component-name > .left.pad { }    /* ✗ Invalid class '.pad', expected a variant. */
 ```
-
-## Valid examples
-
-- `.component-name`
-- `.component-name > .element`
-- `.component-name > .element.-foo`
-- `._helper`
-- `h2`
-
-Also OK:
-
-- `.component-name > h2`
-- `.component-name > a:hover`
-- `.component-name:hover > .element`
 
 [stylelint]: http://stylelint.io/
 [RSCSS]: http://rscss.io/
