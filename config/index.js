@@ -1,6 +1,6 @@
 module.exports = {
   plugins: [
-    require.resolve('./index')
+    require.resolve('../index')
   ],
   rules: {
     'rscss/no-descendant-combinator': 'always',
