@@ -10,12 +10,12 @@ stylelint-rscss is a plugin for [stylelint] to validate your code against [RSCSS
 
 <br>
 
-## Quick start guide
+## Quickstart guide
 
 **Install:** Install [stylelint] and stylelint-rscss to your project.
 
 ```sh
-npm install --save-dev stylelint stylelint-rscss
+npm install --save-dev stylelint rstacruz/stylelint-rscss
 ```
 
 **Configure:** Create a `.stylelintrc` in your project. Use the `stylelint-rscss/config` configuration, which has defaults for strict RSCSS conventions.
