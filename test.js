@@ -22,8 +22,8 @@ test('child combinators', t => {
   })
 })
 
-test('component name', t => {
-  runLint(t, [fixture('component_names.css')], res => {
+test('class format', t => {
+  runLint(t, [fixture('class_format.css')], res => {
     const warnings = res.results[0].warnings
     t.equal(warnings.length, 11)
     t.equal(warnings[0].text,
@@ -45,9 +45,18 @@ test('component name', t => {
     t.equal(warnings[8].text,
       'Invalid element name: \'.bad_nesting\' (rscss/class-format)')
     t.equal(warnings[9].text,
-      'Variant has no element: \'.-variant\' (rscss/class-format)')
+      'Variant has no element: \'.-badvariant\' (rscss/class-format)')
     t.equal(warnings[10].text,
       'Component too deep: \'.my-component > .ok > .ok > .ok > .bad\' (rscss/class-format)')
+  })
+})
+
+test('class format - whitelist', t => {
+  runLint(t, [fixture('class_format-whitelist.css')], res => {
+    const warnings = res.results[0].warnings
+    t.equal(warnings.length, 1)
+    t.equal(warnings[0].text,
+      'Invalid variant name: \'.bad\' (rscss/class-format)')
   })
 })
 

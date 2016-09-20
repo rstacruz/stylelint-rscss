@@ -4,6 +4,11 @@ module.exports = {
   ],
   rules: {
     'rscss/no-descendant-combinator': 'always',
-    'rscss/class-format': true
+    'rscss/class-format': [true, {
+      componentWhitelist: [
+        'btn',
+        'container'
+      ]
+    }]
   }
 }
