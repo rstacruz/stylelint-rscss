@@ -57,7 +57,6 @@ These steps are not required, but are *highly* recommended:
 - Add [stylelint-config-standard](https://www.npmjs.com/package/stylelint-config-standard) as well!
 - Configure your text editor to use stylelint. (See [text editor support](#text-editor-support))
 - Add `npm run lint:css` to your CI script.
-- You can use styelint-rscss as a plugin and enable only the rules you need or customize their configuration. See [config.js](config.js).
 
 <br>
 
@@ -131,9 +130,9 @@ See [Rules](docs/rules.md) for more examples.
 
 <br>
 
-## Rules
+## Rules and customization
 
-See [Rules](docs/rules.md) for a detailed lint of rules.
+See [Rules](docs/rules.md) for a detailed lint of rules and examples of how to customize stylelint-rscss.
 
 <br>
 
