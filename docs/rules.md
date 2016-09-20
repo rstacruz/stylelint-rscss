@@ -50,23 +50,26 @@ Secondary options:
 - `helper` - Format for helper names *(default: `helper`)*
 - `variant` - Format for variant names *(default: `variant`)*
 - `maxDepth` - Maximum component depth *(default: `4`)*
+- `componentWhitelist` - List of component names to be whitelisted *(default: `[]`)*
 
-Each of these options can be set to any of these values:
+The first 4 options can be set to any of these values:
 
-- `component` - Default RSCSS component style (`two-words`)
-- `element` - Default RSCSS component style (`oneword`)
-- `helper` - Default RSCSS component style (`_underscored`)
-- `variant` - Default RSCSS component style (`-dashfirst`)
-- `pascal-case` - React-style Pascal case for components (`ClassName`)
+- `'component'` - Default RSCSS component style (`two-words`)
+- `'element'` - Default RSCSS component style (`oneword`)
+- `'helper'` - Default RSCSS component style (`_underscored`)
+- `'variant'` - Default RSCSS component style (`-dashfirst`)
+- `'pascal-case'` - React-style Pascal case for components (`ClassName`)
 
 ```scss
-.component { }       // ✗ Avoid
-.componentname { }   // ✗ Avoid
-.component-name { }  // ✓ OK
+.component { }                // ✗ Avoid
+.componentname { }            // ✗ Avoid
+.component-name { }           // ✓ OK
+.component-name.-variant { }  // ✓ OK
 
-.componentname { }        // ✗ Invalid component name format.
-.search-box.foo-bar { }   // ✗ Only 1 component name is allowed.
-.search-box.element { }   // ✗ Invalid class '.element', expected a variant.
+.componentname { }           // ✗ Invalid component name format.
+.search-box.foo-bar { }      // ✗ Only 1 component name is allowed.
+.search-box.element { }      // ✗ Invalid class '.element', expected a variant.
+.component-name.variant { }  // ✗ Invalid variant name.
 ```
 
 The `maxDepth` setting works like so:

@@ -92,6 +92,8 @@ Here are some valid examples according to [RSCSS] rules.
   // ✓ Elements should be one word. Use `>` to denote markup structure.
 .component-name > .element.-foo { }
   // ✓ Variant classes begin with a dash (`-`).
+.component-name.-variant { }
+  // ✓ Components can have variants.
 ._helper { }
   // ✓ Helpers start with an underscore (`_`).
 ```
@@ -101,10 +103,13 @@ Some cases not allowed:
 ```scss
 .component-name .element { }
   // ✗ Use `>` to denote markup structure.
+.component-name.variant { }
+  // ✗ Variants must begin with a dash.
 .componentname { }
   // ✗ Components should be two or more words.
 .component-name.other-component { }
   // ✗ Only one component name is allowed.
+.component-name > .-foo { }
 .-foo { }
   // ✗ Variants should be attached to components or elements.
 ```
