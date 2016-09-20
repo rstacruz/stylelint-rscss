@@ -40,3 +40,6 @@ p { }
 
 /* Adjacent selectors */
 .my-component + .my-component { }
+
+/* Variants to tags */
+.my-component > a.-home { }
