@@ -37,3 +37,6 @@ p { }
 .my-component > .ok > .ok { }
 .my-component > .ok > .ok > .ok { }
 .my-component > .ok > .ok > .ok > .bad { }
+
+/* Adjacent selectors */
+.my-component + .my-component { }
