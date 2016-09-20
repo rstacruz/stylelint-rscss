@@ -1,3 +1,10 @@
+## [v0.3.1]
+> Sep 20, 2016
+
+- Dashes in variants are now allowed (eg, `.-no-icon`).
+
+[v0.3.1]: https://github.com/rstacruz/stylelint-rscss/compare/v0.3.0...v0.3.1
+
 ## [v0.3.0]
 > Sep 20, 2016
 
