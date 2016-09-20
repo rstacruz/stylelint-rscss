@@ -1,3 +1,11 @@
+## [v0.3.0]
+> Sep 20, 2016
+
+- Add a `componentWhitelist` option to `rscss/class-format`.
+- Bare elements can have variants (`a.-home`).
+
+[v0.3.0]: https://github.com/rstacruz/stylelint-rscss/compare/v0.2.0...v0.3.0
+
 ## [v0.2.0]
 > Sep 20, 2016
 
