@@ -1,0 +1,5 @@
+/* Too deep */
+.my-component > .ok { }
+.my-component > .ok > .ok { }
+.my-component > .ok > .ok > .ok { }
+.my-component > .ok > .ok > .ok > .bad { }

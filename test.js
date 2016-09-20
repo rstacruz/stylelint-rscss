@@ -25,7 +25,7 @@ test('child combinators', t => {
 test('class format', t => {
   runLint(t, [fixture('class_format.css')], res => {
     const warnings = res.results[0].warnings
-    t.equal(warnings.length, 11)
+    t.equal(warnings.length, 10)
     t.equal(warnings[0].text,
       "Invalid component name: '.badcomponent' (rscss/class-format)")
     t.equal(warnings[1].text,
@@ -46,7 +46,14 @@ test('class format', t => {
       'Invalid element name: \'.bad_nesting\' (rscss/class-format)')
     t.equal(warnings[9].text,
       'Variant has no element: \'.-badvariant\' (rscss/class-format)')
-    t.equal(warnings[10].text,
+  })
+})
+
+test('class format - depth', t => {
+  runLint(t, [fixture('class_format-depth.css')], res => {
+    const warnings = res.results[0].warnings
+    t.equal(warnings.length, 1)
+    t.equal(warnings[0].text,
       'Component too deep: \'.my-component > .ok > .ok > .ok > .bad\' (rscss/class-format)')
   })
 })
@@ -74,13 +81,3 @@ function runLint (t, files, fn) {
     .then(() => t.end())
     .catch(err => t.end(err))
 }
-
-/*
- * TODO:
- *
- * - [ ] rscss/class-format: components
- * - [x] rscss/class-format: helpers
- * - [ ] rscss/class-format: elements
- * - [ ] rscss/element-name-format: true
- * - [ ] rscss/max-component-level: 3
- */
