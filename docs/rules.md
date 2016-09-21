@@ -9,7 +9,7 @@ Here's an example `.stylelintrc` that overrides some stylelint-rscss configurati
     "stylelint-rscss"
   ],
   "rules": {
-    "rscss/no-descendant-selector": true,
+    "rscss/no-descendant-combinator": true,
     "rscss/class-format": [
       true,
       {
@@ -43,7 +43,7 @@ Validates class names of components, helpers, and elements.
 | `true` | Enable rule |
 | `false` | Disable rule |
 
-Secondary options:
+These secondary options can be given:
 
 - `component` - Sets the format for component names; set to `false` to disable. *(default: `component`)*
 - `element` - Format for element names *(default: `element`)*
@@ -59,6 +59,7 @@ The first 4 options can be set to any of these values:
 - `'helper'` - Default RSCSS component style (`_underscored`)
 - `'variant'` - Default RSCSS component style (`-dashfirst`)
 - `'pascal-case'` - React-style Pascal case for components (`ClassName`)
+- *(regexp)* - A regular expression
 
 ```scss
 .component { }                // ✗ Avoid
@@ -78,4 +79,18 @@ The `maxDepth` setting works like so:
 .component-name { }             // 0
 .component-name > .a { }        // 1
 .component-name > .a > .b { }   // 2
+```
+
+To use custom regular expressions, pass a `/^...$/` regular expression into your Stylelint configuration. They will match class names (without the `.`).
+
+```
+  "rules": {
+    "rscss/class-format": [
+      true,
+      {
+        "component": /^[A-Za-z0-9]$/,
+        "element": /^[A-Za-z0-9]$/
+      }
+    ]
+  }
 ```
