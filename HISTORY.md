@@ -1,3 +1,8 @@
+## [v0.3.2]
+> Sep 21, 2016
+
+- #3 - Fix error when setting rules to `false`.
+
 ## [v0.3.1]
 > Sep 20, 2016
 
