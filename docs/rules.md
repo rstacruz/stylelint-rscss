@@ -81,15 +81,15 @@ The `maxDepth` setting works like so:
 .component-name > .a > .b { }   // 2
 ```
 
-To use custom regular expressions, pass a `/^...$/` regular expression into your Stylelint configuration. They will match class names (without the `.`).
+To use custom regular expressions, pass a `'^...$'` regular expression into your Stylelint configuration. They will match class names (without the `.`).
 
 ```
   "rules": {
     "rscss/class-format": [
       true,
       {
-        "component": /^[A-Za-z0-9]$/,
-        "element": /^[A-Za-z0-9]$/
+        "component": "^[A-Z0-9]+$",
+        "element": "^[a-z0-9]+$"
       }
     ]
   }
