@@ -3,7 +3,7 @@
 const test = require('tape')
 
 test('child combinators, sass', t => {
-  runLint(t, [fixture('child.scss')], res => {
+  runLint(t, { files: [fixture('child.scss')] }, res => {
     const warnings = res.results[0].warnings
     t.equal(warnings.length, 1)
     t.equal(warnings[0].rule,
@@ -14,7 +14,7 @@ test('child combinators, sass', t => {
 })
 
 test('child combinators', t => {
-  runLint(t, [fixture('child.css')], res => {
+  runLint(t, { files: [fixture('child.css')] }, res => {
     const warnings = res.results[0].warnings
     t.equal(warnings.length, 1)
     t.equal(warnings[0].text,
@@ -23,7 +23,7 @@ test('child combinators', t => {
 })
 
 test('class format', t => {
-  runLint(t, [fixture('class_format.css')], res => {
+  runLint(t, { files: [fixture('class_format.css')] }, res => {
     const warnings = res.results[0].warnings
     t.equal(warnings.length, 10)
     t.equal(warnings[0].text,
@@ -49,8 +49,60 @@ test('class format', t => {
   })
 })
 
+test('class format, pascal case', t => {
+  runLint(t, {
+    files: [fixture('class_format-react.css')],
+    config: {
+      extends: './config',
+      rules: {
+        'rscss/class-format': [
+          true,
+          {
+            component: 'pascal-case'
+          }
+        ]
+      }
+    }
+  }, res => {
+    const warnings = res.results[0].warnings
+    t.equal(warnings.length, 3)
+    t.equal(warnings[0].text,
+      "Invalid component name: '.bad-component' (rscss/class-format)")
+    t.equal(warnings[1].text,
+      "Invalid component name: '.bad-component.-xyz' (rscss/class-format)")
+    t.equal(warnings[2].text,
+      "Invalid component name: '.bad-component.-abc' (rscss/class-format)")
+  })
+})
+
+test('class format, pascal case', t => {
+  runLint(t, {
+    files: [fixture('class_format-react.css')],
+    config: {
+      extends: './config',
+      rules: {
+        'rscss/class-format': [
+          true,
+          {
+            component: '^([A-Z][a-z0-9]*)+$'
+          }
+        ]
+      }
+    }
+  }, res => {
+    const warnings = res.results[0].warnings
+    t.equal(warnings.length, 3)
+    t.equal(warnings[0].text,
+      "Invalid component name: '.bad-component' (rscss/class-format)")
+    t.equal(warnings[1].text,
+      "Invalid component name: '.bad-component.-xyz' (rscss/class-format)")
+    t.equal(warnings[2].text,
+      "Invalid component name: '.bad-component.-abc' (rscss/class-format)")
+  })
+})
+
 test('class format - depth', t => {
-  runLint(t, [fixture('class_format-depth.css')], res => {
+  runLint(t, { files: [fixture('class_format-depth.css')] }, res => {
     const warnings = res.results[0].warnings
     t.equal(warnings.length, 1)
     t.equal(warnings[0].text,
@@ -59,7 +111,7 @@ test('class format - depth', t => {
 })
 
 test('class format - whitelist', t => {
-  runLint(t, [fixture('class_format-whitelist.css')], res => {
+  runLint(t, { files: [fixture('class_format-whitelist.css')] }, res => {
     const warnings = res.results[0].warnings
     t.equal(warnings.length, 1)
     t.equal(warnings[0].text,
@@ -75,8 +127,8 @@ function fixture (path) {
   return require('path').join(__dirname, 'fixtures', path)
 }
 
-function runLint (t, files, fn) {
-  require('stylelint').lint({ files })
+function runLint (t, options, fn) {
+  require('stylelint').lint(options)
     .then(result => fn(result))
     .then(() => t.end())
     .catch(err => t.end(err))

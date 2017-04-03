@@ -1,0 +1,8 @@
+.GoodComponent { }
+.GoodComponent.-xyz { }
+.GoodComponent.-no-xyz { }
+
+/* Bad */
+.bad-component { }
+.bad-component.-xyz { }
+.bad-component.-abc > .xyz { }
