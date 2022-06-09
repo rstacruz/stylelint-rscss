@@ -148,4 +148,4 @@ Authored and maintained by Rico Sta. Cruz with help from contributors ([list][co
 [MIT]: http://mit-license.org/
 [contributors]: http://github.com/rstacruz/stylelint-rscss/contributors
 [stylelint]: http://stylelint.io/
-[RSCSS]: http://rscss.io/
+[RSCSS]: http://ricostacruz.com/rscss/
